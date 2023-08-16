@@ -1,7 +1,7 @@
 import { List } from '@chakra-ui/react';
 import generateRssFeed from '@/utils/rss';
 import Metadata from '@/components/Metadata';
-import PostListItem from '@/components/Blogs/PostListItem';
+import PostListItem from '@/components/Blog/PostListItem';
 
 const Blog = () => {
   return (
