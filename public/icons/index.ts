@@ -5,6 +5,8 @@ import ChevronDownIcon from './chevron_down.svg';
 import CopyIcon from './copy.svg';
 import MarkerHelpIcon from './marker_help.svg';
 import MarkerErrorIcon from './marker_error.svg';
+import StarIcon from './star.svg';
+import StarFillIcon from './star_fill.svg';
 
 export {
   LocationIcon,
@@ -14,4 +16,6 @@ export {
   CarLogoIcon,
   MarkerHelpIcon,
   MarkerErrorIcon,
+  StarIcon,
+  StarFillIcon,
 };
