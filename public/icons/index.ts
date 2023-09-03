@@ -6,7 +6,6 @@ import CopyIcon from './copy.svg';
 import MarkerHelpIcon from './marker_help.svg';
 import MarkerErrorIcon from './marker_error.svg';
 import StarIcon from './star.svg';
-import StarFillIcon from './star_fill.svg';
 
 export {
   LocationIcon,
@@ -17,5 +16,4 @@ export {
   MarkerHelpIcon,
   MarkerErrorIcon,
   StarIcon,
-  StarFillIcon,
 };
