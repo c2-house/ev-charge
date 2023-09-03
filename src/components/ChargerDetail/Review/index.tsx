@@ -1,4 +1,5 @@
-import { FormEventHandler, useState } from 'react';
+import { FormEventHandler, useEffect, useState } from 'react';
+import { useAtomValue } from 'jotai';
 import {
   Box,
   Button,
@@ -9,17 +10,42 @@ import {
   useTheme,
 } from '@chakra-ui/react';
 
+import { Review } from '@/types/database';
+import { currentStationAtom } from '@/states/map';
+import useReview from '@/hooks/useReview';
 import StarRating from './StarRating';
 
 const Review = () => {
+  const [reviews, setReviews] = useState<Review[] | null>(null);
   const [rating, setRating] = useState(5);
-  const [value, setValue] = useState('');
+  const [content, setContent] = useState('');
+
+  const currentStation = useAtomValue(currentStationAtom);
+  const { getReviews, postReview } = useReview();
   const theme = useTheme();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    console.log(e);
+    if (!content.trim()) return alert('리뷰 내용을 작성해주세요.');
+
+    const review = {
+      stationId: currentStation,
+      rating,
+      content,
+    };
+
+    postReview(review).then((err) => {
+      if (err) return;
+      getReviews(currentStation).then((res) => setReviews(res.data));
+      setRating(5);
+      setContent('');
+    });
   };
+
+  useEffect(() => {
+    getReviews(currentStation).then((res) => setReviews(res.data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentStation]);
 
   return (
     <Box p={4}>
@@ -35,11 +61,14 @@ const Review = () => {
             placeholder='리뷰를 작성해주세요.'
             focusBorderColor={theme.colors.primary}
             name='content'
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            maxLength={100}
+            autoFocus={false}
+            autoComplete='off'
           />
           <InputRightElement w='4rem'>
-            <Button h='1.75rem' size='sm'>
+            <Button type='submit' h='1.75rem' size='sm'>
               등록
             </Button>
           </InputRightElement>
