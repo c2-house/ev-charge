@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
 
 import { Post } from '@/types/supabase';
-import Metadata from '@/components/Metadata';
 import RelatedPosts from './RelatedPosts';
 import Introduction from './Content/Introduction';
 import Subsidy from './Content/Subsidy';
@@ -11,13 +10,13 @@ import Lanzador from './Content/Lanzador';
 import BenzEQG from './Content/BenzEQG';
 
 interface Props {
-  post: Post;
+  title: string;
+  slug: string;
+  createdAt: string;
   relatedPosts: Post[];
 }
 
-const PostDetail = ({ post, relatedPosts }: Props) => {
-  const { title, description, keywords, slug, created_at } = post;
-
+const PostDetail = ({ title, slug, createdAt, relatedPosts }: Props) => {
   const getContent = (slug: string) =>
     ({
       'ev-charge-introduction': <Introduction slug={slug} />,
@@ -29,13 +28,11 @@ const PostDetail = ({ post, relatedPosts }: Props) => {
 
   return (
     <>
-      <Metadata title={title} description={description} keywords={keywords} url={`/blog/${slug}`} />
-
       <Heading as='h2' size='xl'>
         {title}
       </Heading>
       <Text fontSize='sm' color='gray.500' mt={3}>
-        {created_at}
+        {createdAt}
       </Text>
       <Divider my={6} />
       <Box as='section' pb={6}>

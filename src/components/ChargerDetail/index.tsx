@@ -3,7 +3,7 @@ import { Spinner, useTheme } from '@chakra-ui/react';
 
 import { currentStationAtom, isLoadingLocationAtom, showNearbyStationsAtom } from '@/states/map';
 import useChargers from '@/hooks/useChargers';
-import Status from './Status';
+import Status from '../Common/Status';
 import StationInfo from './StationInfo';
 import NearbyStations from './NearbyStations';
 import { CarLogoIcon, MarkerErrorIcon } from '../../../public/icons';

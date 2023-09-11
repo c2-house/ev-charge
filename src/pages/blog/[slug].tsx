@@ -3,6 +3,7 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { Post } from '@/types/supabase';
 import { getAllPosts } from '@/services/blog';
 import PostDetail from '@/components/Blog/PostDetail';
+import Metadata from '@/components/Common/Metadata';
 
 interface Props {
   post: Post | undefined;
@@ -12,7 +13,14 @@ interface Props {
 const Post = ({ post, relatedPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (!post) return null;
 
-  return <PostDetail post={post} relatedPosts={relatedPosts} />;
+  const { title, description, keywords, slug, created_at: createdAt } = post;
+
+  return (
+    <>
+      <Metadata title={title} description={description} keywords={keywords} url={`/blog/${slug}`} />
+      <PostDetail title={title} slug={slug} createdAt={createdAt} relatedPosts={relatedPosts} />
+    </>
+  );
 };
 
 export default Post;

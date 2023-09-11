@@ -4,7 +4,7 @@ import { List } from '@chakra-ui/react';
 import { Post } from '@/types/supabase';
 import { getAllPosts } from '@/services/blog';
 import generateRssFeed from '@/utils/rss';
-import Metadata from '@/components/Metadata';
+import Metadata from '@/components/Common/Metadata';
 import PostListItem from '@/components/Blog/PostListItem';
 
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
