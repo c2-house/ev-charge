@@ -39,7 +39,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
   const { posts } = await getAllPosts();
-  generateRssFeed();
+  generateRssFeed(posts);
 
   return {
     props: {
