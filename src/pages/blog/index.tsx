@@ -6,8 +6,13 @@ import { getAllPosts } from '@/services/blog';
 import generateRssFeed from '@/utils/rss';
 import Metadata from '@/components/Common/Metadata';
 import PostListItem from '@/components/Blog/PostListItem';
+import Status from '@/components/Common/Status';
 
 const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  if (posts.length === 0) {
+    return <Status type='error' text='게시글을 불러올 수 없습니다.' fullHeight />;
+  }
+
   return (
     <>
       <Metadata

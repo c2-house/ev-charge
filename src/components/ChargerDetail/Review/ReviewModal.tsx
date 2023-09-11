@@ -45,7 +45,7 @@ const ReviewModal = ({ setReviews }: Props) => {
     };
 
     postReview(newReview).then((res) => {
-      if (res.error) return alert('리뷰 작성에 실패했습니다.');
+      if (res.error) return alert('리뷰를 등록할 수 없습니다.');
       setReviews(res.data);
     });
 

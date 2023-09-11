@@ -4,6 +4,7 @@ import { Post } from '@/types/supabase';
 import { getAllPosts } from '@/services/blog';
 import PostDetail from '@/components/Blog/PostDetail';
 import Metadata from '@/components/Common/Metadata';
+import Status from '@/components/Common/Status';
 
 interface Props {
   post: Post | undefined;
@@ -11,7 +12,9 @@ interface Props {
 }
 
 const Post = ({ post, relatedPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if (!post) return null;
+  if (!post) {
+    return <Status type='error' text='게시글을 불러올 수 없습니다.' fullHeight />;
+  }
 
   const { title, description, keywords, slug, created_at: createdAt } = post;
 
