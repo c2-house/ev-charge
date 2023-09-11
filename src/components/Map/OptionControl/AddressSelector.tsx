@@ -39,7 +39,13 @@ const AddressSelector = () => {
     <>
       <Selector buttonText={cityCode ? CITY_CODE[cityCode] : '시/도 선택'}>
         {Object.keys(CITY_CODE).map((key) => (
-          <MenuItem key={key} value={key} onClick={handleCityChange}>
+          <MenuItem
+            key={key}
+            value={key}
+            onClick={handleCityChange}
+            _focus={{ bg: 'transparent' }}
+            _hover={{ bg: theme.colors.gray[100] }}
+          >
             {CITY_CODE[key]}
           </MenuItem>
         ))}
@@ -49,7 +55,13 @@ const AddressSelector = () => {
         {Object.keys(DISTRICT_CODE)
           .filter((key) => key.startsWith(cityCode))
           .map((key) => (
-            <MenuItem key={key} value={key} onClick={handleDistrictChange}>
+            <MenuItem
+              key={key}
+              value={key}
+              onClick={handleDistrictChange}
+              _focus={{ bg: 'transparent' }}
+              _hover={{ bg: theme.colors.gray[100] }}
+            >
               {DISTRICT_CODE[key]}
             </MenuItem>
           ))}

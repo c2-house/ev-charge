@@ -23,10 +23,7 @@ const NaverMap = ({ children }: { children: React.ReactNode }) => {
       maxZoom: 18,
       scaleControl: true,
       mapDataControl: false,
-      zoomControl: true,
-      zoomControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT,
-      },
+      zoomControl: false,
     };
 
     const map = new naver.maps.Map(MAP_ID, mapOptions);

@@ -9,6 +9,7 @@ import { currentStationAtom } from '@/states/map';
 import { convertDistance, convertToCoord } from '@/utils/charger';
 import { MARKER_IMAGES } from '@/constants/map';
 import useMap from '@/hooks/useMap';
+import BottomSheet from './BottomSheet';
 
 const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
   const setCurrentStation = useSetAtom(currentStationAtom);
@@ -21,47 +22,48 @@ const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
   };
 
   return (
-    <Box w='full' maxW='container.xl' pt={1} pb={6}>
-      <Heading as='h3' size='md' p={4}>
-        내 주변 충전소
-      </Heading>
-
-      {stations.map((station) => {
-        const { statId, statNm, distance, addr, lat, lng, markerType } = station;
-        return (
-          <Fragment key={statId}>
-            <Divider />
-            <button
-              style={{ width: '100%' }}
-              onClick={() => handleStationClick(statId, convertToCoord(lat, lng))}
-            >
-              <Flex p={4} gap={3}>
-                <Flex alignItems='center' flexShrink={0}>
-                  <Image
-                    src={MARKER_IMAGES[markerType]}
-                    alt='충전소 아이콘'
-                    width={28}
-                    height={37}
-                  />
-                </Flex>
-                <Box textAlign='left'>
-                  <Text mb={1} fontSize='lg' fontWeight='bold' noOfLines={1}>
-                    {statNm}
-                  </Text>
-                  <Flex alignItems='center'>
-                    <Text fontWeight='semibold'>{convertDistance(distance)}</Text>
-                    <Divider orientation='vertical' h={4} mx={1.5} borderColor='gray.300' />
-                    <Text color='gray.600' noOfLines={1}>
-                      {addr}
-                    </Text>
+    <BottomSheet>
+      <Box pb={6}>
+        <Heading as='h3' size='md' p={4}>
+          내 주변 충전소
+        </Heading>
+        {stations.map((station) => {
+          const { statId, statNm, distance, addr, lat, lng, markerType } = station;
+          return (
+            <Fragment key={statId}>
+              <Divider />
+              <button
+                style={{ width: '100%' }}
+                onClick={() => handleStationClick(statId, convertToCoord(lat, lng))}
+              >
+                <Flex p={4} gap={3}>
+                  <Flex alignItems='center' flexShrink={0}>
+                    <Image
+                      src={MARKER_IMAGES[markerType]}
+                      alt='충전소 아이콘'
+                      width={28}
+                      height={37}
+                    />
                   </Flex>
-                </Box>
-              </Flex>
-            </button>
-          </Fragment>
-        );
-      })}
-    </Box>
+                  <Box textAlign='left'>
+                    <Text mb={1} fontSize='lg' fontWeight='bold' noOfLines={1}>
+                      {statNm}
+                    </Text>
+                    <Flex alignItems='center'>
+                      <Text fontWeight='semibold'>{convertDistance(distance)}</Text>
+                      <Divider orientation='vertical' h={4} mx={1.5} borderColor='gray.300' />
+                      <Text color='gray.600' noOfLines={1}>
+                        {addr}
+                      </Text>
+                    </Flex>
+                  </Box>
+                </Flex>
+              </button>
+            </Fragment>
+          );
+        })}
+      </Box>
+    </BottomSheet>
   );
 };
 
