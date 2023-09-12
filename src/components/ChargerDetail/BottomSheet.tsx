@@ -1,7 +1,13 @@
-import { Container, useTheme } from '@chakra-ui/react';
+import { useEffect, useRef } from 'react';
+import { Box, Container, useTheme } from '@chakra-ui/react';
 
 const BottomSheet = ({ children }: { children: React.ReactNode }) => {
+  const topRef = useRef<HTMLDivElement>(null);
   const theme = useTheme();
+
+  useEffect(() => {
+    topRef.current?.scrollIntoView();
+  }, [children]);
 
   return (
     <Container
@@ -20,18 +26,9 @@ const BottomSheet = ({ children }: { children: React.ReactNode }) => {
           display: 'none',
         },
       }}
-      _before={{
-        content: '""',
-        display: 'block',
-        pos: 'sticky',
-        top: 0,
-        left: 0,
-        zIndex: 10,
-        h: '16px',
-        w: 'full',
-        bg: 'white',
-      }}
     >
+      <Box pos='sticky' top={0} zIndex={10} w='full' h={6} bg='white'></Box>
+      <Box ref={topRef} scrollMarginTop={6} />
       {children}
     </Container>
   );
