@@ -24,7 +24,7 @@ const Selector = ({ buttonText, menuList, menuObject, onClick }: Props) => {
       </MenuButton>
 
       <MenuList
-        maxH='30vh'
+        maxH='35dvh'
         overflowY='scroll'
         fontSize='sm'
         sx={{

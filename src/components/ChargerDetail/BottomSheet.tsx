@@ -15,7 +15,7 @@ const BottomSheet = ({ children }: { children: React.ReactNode }) => {
       bottom={0}
       zIndex={theme.zIndex.bottomSheet}
       maxW='container.lg'
-      h={`calc(100vh - ${theme.sizes.mapHeight} - ${theme.sizes.navHeight} + 8px)`}
+      h={`calc(100dvh - ${theme.sizes.mapHeight} - ${theme.sizes.navHeight} + 8px)`}
       overflowY='auto'
       p={0}
       bg='white'
