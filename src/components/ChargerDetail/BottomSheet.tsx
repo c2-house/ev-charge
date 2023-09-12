@@ -12,7 +12,7 @@ const BottomSheet = ({ children }: { children: React.ReactNode }) => {
   return (
     <Container
       pos='fixed'
-      bottom={0}
+      bottom='env(safe-area-inset-bottom)'
       zIndex={theme.zIndex.bottomSheet}
       maxW='container.lg'
       h={`calc(100dvh - ${theme.sizes.mapHeight} - ${theme.sizes.navHeight} + 8px)`}

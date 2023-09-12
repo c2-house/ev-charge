@@ -20,7 +20,7 @@ const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
   };
 
   return (
-    <Box pb={6}>
+    <Box pb={4}>
       <Heading as='h3' size='md' p={4} pt={1}>
         내 주변 충전소
       </Heading>
