@@ -40,7 +40,7 @@ const PostDetail = ({ title, slug, createdAt, relatedPosts }: Props) => {
       </Box>
 
       <RelatedPosts posts={relatedPosts} />
-      <Button variant='link' colorScheme='green' color='green.400' mb={4}>
+      <Button variant='link' colorScheme='green' color='green.400' mb={2} ml='auto' display='block'>
         <Link href='/blog'>← 목록으로</Link>
       </Button>
     </>
