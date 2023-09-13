@@ -35,7 +35,7 @@ const Navigation = () => {
               <ListItem
                 key={menu.name}
                 color={currentPath === menu.href ? 'green.400' : 'inherit'}
-                fontSize={['md', 'lg']}
+                fontSize='lg'
                 fontWeight='bold'
               >
                 <Link href={menu.href}>{menu.name}</Link>
