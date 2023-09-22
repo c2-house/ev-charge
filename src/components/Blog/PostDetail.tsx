@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
 
 import { Post } from '@/types/supabase';
+import AdSense from '../Common/AdSense';
 import RelatedPosts from './RelatedPosts';
 import Introduction from './Content/Introduction';
 import Subsidy from './Content/Subsidy';
 import AcquisitionTax from './Content/AcquisitionTax';
 import Lanzador from './Content/Lanzador';
 import BenzEQG from './Content/BenzEQG';
-import AdSense from '../Common/AdSense';
+import GenesisGV70 from './Content/GenesisGV70';
 
 interface Props {
   title: string;
@@ -26,6 +27,7 @@ const PostDetail = ({ title, slug, createdAt, relatedPosts }: Props) => {
     'green-car-acquisition-tax': <AcquisitionTax imgDir={imgDir} />,
     'lamborghini-lanzador': <Lanzador imgDir={imgDir} />,
     'benz-g-wagen-eqg': <BenzEQG imgDir={imgDir} />,
+    'genesis-gv70': <GenesisGV70 imgDir={imgDir} />,
   }[slug] || <></>;
 
   return (
