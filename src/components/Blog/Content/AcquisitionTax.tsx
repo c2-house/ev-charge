@@ -16,8 +16,8 @@ const AcquisitionTax = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/01.jpg`}
         alt='전기차 취득세'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -62,8 +62,8 @@ const AcquisitionTax = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/02.jpg`}
         alt='친환경 자동차 취득세'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',

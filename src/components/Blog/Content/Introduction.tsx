@@ -40,8 +40,8 @@ const Introduction = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/1.jpeg`}
         alt='전기차G 사용 방법'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -56,8 +56,8 @@ const Introduction = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/2.jpeg`}
         alt='전기차G 사용 방법'
-        width={1200}
-        height={470}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -69,7 +69,7 @@ const Introduction = ({ imgDir }: { imgDir: string }) => {
         3. 해당 충전소의 현황과 정보등이 상세하게 제공되고 있습니다. 시간과 요금도 참고하셔서 비교
         후 선택도 가능합니다.
       </Text>
-      <Image src={`${imgDir}/3.jpeg`} alt='전기차G 사용 방법' width={800} height={879} />
+      <Image src={`${imgDir}/3.jpeg`} alt='전기차G 사용 방법' width={530} height={582} />
     </>
   );
 };

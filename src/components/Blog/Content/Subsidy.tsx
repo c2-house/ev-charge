@@ -36,8 +36,8 @@ const Subsidy = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/01.jpg`}
         alt='전기차 보조금'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -472,8 +472,8 @@ const Subsidy = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/02.jpg`}
         alt='전기차 보조금 신청 기간'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',

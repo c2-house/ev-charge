@@ -40,8 +40,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/01.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -56,8 +56,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
         <Image
           src={`${imgDir}/02.png`}
           alt='제네시스 GV80'
-          width={1200}
-          height={630}
+          width={500}
+          height={500}
           style={{
             width: '50%',
             height: 'auto',
@@ -66,8 +66,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
         <Image
           src={`${imgDir}/03.png`}
           alt='제네시스 GV80'
-          width={1200}
-          height={630}
+          width={500}
+          height={500}
           style={{
             width: '50%',
             height: 'auto',
@@ -169,8 +169,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/04.jpg`}
         alt='제네시스 GV80'
-        width={630}
-        height={1200}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -180,8 +180,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/05.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -195,8 +195,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/06.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -214,8 +214,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/07.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={525}
+        height={1000}
         style={{
           width: '100%',
           height: 'auto',
@@ -228,8 +228,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/08.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={525}
+        height={1000}
         style={{
           width: '100%',
           height: 'auto',
@@ -243,8 +243,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/09.jpg`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={1000}
+        height={1000}
         style={{
           width: '100%',
           height: 'auto',
@@ -257,8 +257,8 @@ const GenesisGV80Coupe = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/10.png`}
         alt='제네시스 GV80'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',

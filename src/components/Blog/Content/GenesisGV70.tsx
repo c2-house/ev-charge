@@ -37,8 +37,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/01.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -52,8 +52,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/02.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -126,8 +126,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/03.jpg`}
         alt='제네시스 GV70'
-        width={630}
-        height={1200}
+        width={525}
+        height={1000}
         style={{
           width: '100%',
           height: 'auto',
@@ -144,8 +144,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/04.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -162,8 +162,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/05.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -180,8 +180,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/06.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -213,8 +213,8 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/07.jpg`}
         alt='제네시스 GV70'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',

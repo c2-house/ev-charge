@@ -38,8 +38,8 @@ const BenzEQG = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/01.jpg`}
         alt='지바겐'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -57,8 +57,8 @@ const BenzEQG = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/02.jpg`}
         alt='지바겐'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -71,8 +71,8 @@ const BenzEQG = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/03.jpg`}
         alt='지바겐'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
@@ -94,8 +94,8 @@ const BenzEQG = ({ imgDir }: { imgDir: string }) => {
       <Image
         src={`${imgDir}/04.jpg`}
         alt='지바겐'
-        width={1200}
-        height={630}
+        width={1000}
+        height={525}
         style={{
           width: '100%',
           height: 'auto',
