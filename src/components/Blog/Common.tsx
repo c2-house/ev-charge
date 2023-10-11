@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import Image from 'next/image';
-import { Heading, Table, TableContainer, Text, useTheme } from '@chakra-ui/react';
+import { Button, Heading, Table, TableContainer, Text, useTheme } from '@chakra-ui/react';
 import { convertToSlug } from '@/utils/blog';
 
 export const BlogHeading = ({ title }: { title: string }) => {
@@ -87,5 +88,21 @@ export const BlogTable = ({
         {children}
       </Table>
     </TableContainer>
+  );
+};
+
+export const BlogLink = ({
+  href,
+  text,
+  inline = false,
+}: {
+  href: string;
+  text: string;
+  inline?: boolean;
+}) => {
+  return (
+    <Button variant='link' colorScheme='green' color='green.400' mb={inline ? undefined : 5}>
+      <Link href={href}>{text}</Link>
+    </Button>
   );
 };

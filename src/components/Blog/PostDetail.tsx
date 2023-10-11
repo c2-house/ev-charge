@@ -11,6 +11,7 @@ import Lanzador from './Content/Lanzador';
 import BenzEQG from './Content/BenzEQG';
 import GenesisGV70 from './Content/GenesisGV70';
 import GenesisGV80Coupe from './Content/GenesisGV80Coupe';
+import BmwIx50 from './Content/BmwIx50';
 
 interface Props {
   title: string;
@@ -30,6 +31,7 @@ const PostDetail = ({ title, slug, createdAt, relatedPosts }: Props) => {
     'benz-g-wagen-eqg': <BenzEQG imgDir={imgDir} />,
     'genesis-gv70': <GenesisGV70 imgDir={imgDir} />,
     'genesis-gv80-coupe': <GenesisGV80Coupe imgDir={imgDir} />,
+    'bmw-ix50': <BmwIx50 imgDir={imgDir} />,
   }[slug] || <></>;
 
   return (

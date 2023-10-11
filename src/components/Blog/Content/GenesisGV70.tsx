@@ -1,17 +1,5 @@
-import Link from 'next/link';
-import {
-  Button,
-  Highlight,
-  ListItem,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-  UnorderedList,
-} from '@chakra-ui/react';
-
-import { BlogHeading, BlogImage, BlogTable, BlogText } from '../Common';
+import { Highlight, ListItem, Tbody, Td, Th, Thead, Tr, UnorderedList } from '@chakra-ui/react';
+import { BlogHeading, BlogImage, BlogLink, BlogTable, BlogText } from '../Common';
 import TableOfContents from '../TableOfContents';
 
 const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
@@ -131,9 +119,7 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
         전기차의 경우는 보조금이 지원되는데요. 지자체별 금액이 다르니 GV70 전기차 보조금 관련한
         내용은 아래에서 상세하게 확인해보시기 바랍니다.
       </BlogText>
-      <Button variant='link' colorScheme='green' color='green.400' mb={5}>
-        <Link href='/blog/electric-car-subsidy'>전기차 보조금 확인하기</Link>
-      </Button>
+      <BlogLink href='/blog/electric-car-subsidy' text='전기차 보조금 확인하기' />
       <BlogImage src={`${imgDir}/07.jpg`} alt={alt} />
 
       <BlogHeading title={titles[3]} />
@@ -150,9 +136,7 @@ const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
       <BlogText>
         실시간으로 GV70 중고차 시세를 확인하시기 원하시면 아래 링크에서 확인해보시기 바랍니다.
       </BlogText>
-      <Button variant='link' colorScheme='green' color='green.400' mb={5}>
-        <Link href='/used-cars'>제네시스 GV70 전기차 중고 시세</Link>
-      </Button>
+      <BlogLink href='/used-cars' text='제네시스 GV70 전기차 중고 시세 확인하기' />
     </>
   );
 };
