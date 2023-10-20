@@ -4,6 +4,7 @@ import {
   Button,
   ChakraProps,
   Heading,
+  Highlight,
   Table,
   TableContainer,
   Text,
@@ -21,8 +22,18 @@ export const BlogHeading = ({ title }: { title: string }) => {
   );
 };
 
-export const BlogText = ({ children }: { children: React.ReactNode }) => {
-  return <Text my={5}>{children}</Text>;
+export const BlogText = ({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}) => {
+  return (
+    <Text my={5} style={style}>
+      {children}
+    </Text>
+  );
 };
 
 type ImageOrientation = 'horizontal' | 'vertical' | 'square';
@@ -122,5 +133,13 @@ export const BlogLink = ({
     >
       <Link href={href}>{text}</Link>
     </Button>
+  );
+};
+
+export const BlogHighlight = ({ text }: { text: string }) => {
+  return (
+    <Highlight query={text} styles={{ bg: 'orange.100', fontWeight: 'bold' }}>
+      {text}
+    </Highlight>
   );
 };
