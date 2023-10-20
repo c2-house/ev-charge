@@ -1,9 +1,10 @@
-import Link from 'next/link';
-import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
+import { Box, Divider, Heading, Text } from '@chakra-ui/react';
 
 import { Post } from '@/types/supabase';
 import AdSense from '../Common/AdSense';
 import RelatedPosts from './RelatedPosts';
+import { BlogLink } from './Common';
+
 import Introduction from './Content/Introduction';
 import Subsidy from './Content/Subsidy';
 import AcquisitionTax from './Content/AcquisitionTax';
@@ -50,17 +51,7 @@ const PostDetail = ({ title, slug, createdAt, relatedPosts }: Props) => {
       </Box>
 
       <RelatedPosts posts={relatedPosts} />
-      <Button
-        variant='link'
-        colorScheme='green'
-        color='green.400'
-        mt={6}
-        mb={2}
-        ml='auto'
-        display='block'
-      >
-        <Link href='/blog'>← 목록으로</Link>
-      </Button>
+      <BlogLink href='/blog' text='← 목록으로' sx={{ ml: 'auto' }} />
     </>
   );
 };
