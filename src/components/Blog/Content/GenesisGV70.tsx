@@ -1,15 +1,17 @@
 import { Highlight, ListItem, Tbody, Td, Th, Thead, Tr, UnorderedList } from '@chakra-ui/react';
 import { BlogHeading, BlogImage, BlogLink, BlogTable, BlogText } from '../Common';
 import TableOfContents from '../TableOfContents';
+import useImgDirectory from '@/hooks/useImgDirectory';
 
-const GenesisGV70 = ({ imgDir }: { imgDir: string }) => {
+const GenesisGV70 = () => {
+  const imgDir = useImgDirectory();
+  const alt = '제네시스 GV70';
   const titles = [
     '제네시스 GV70 전기차 제원',
     'GV70 전기차 인테리어',
     '제네시스 GV70 전기차 가격은?',
     'GV70 전기차 중고 시세',
   ];
-  const alt = '제네시스 GV70';
 
   return (
     <>
