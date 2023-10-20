@@ -13,6 +13,7 @@ import BenzEQG from './Content/BenzEQG';
 import GenesisGV70 from './Content/GenesisGV70';
 import GenesisGV80Coupe from './Content/GenesisGV80Coupe';
 import BmwIx50 from './Content/BmwIx50';
+import HomeCharger from './Content/HomeCharger';
 
 const getContent = (slug: string) =>
   ({
@@ -24,6 +25,7 @@ const getContent = (slug: string) =>
     'genesis-gv70': <GenesisGV70 />,
     'genesis-gv80-coupe': <GenesisGV80Coupe />,
     'bmw-ix50': <BmwIx50 />,
+    'home-ev-charger': <HomeCharger />,
   }[slug] || <></>);
 
 interface Props {
