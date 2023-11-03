@@ -29,7 +29,7 @@ export const Post = defineDocumentType(() => ({
     },
     image_url: {
       type: 'string',
-      resolve: (doc) => `/images/blog/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/images/blog/${doc._raw.flattenedPath}/01.jpg`,
     },
   },
 }));

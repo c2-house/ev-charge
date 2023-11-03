@@ -1,6 +1,6 @@
 import fs from 'fs';
 import RSS from 'rss';
-import { Post } from '@/types/supabase';
+import { Post } from 'contentlayer/generated';
 
 export default async function generateRssFeed(posts: Post[]) {
   const siteURL =

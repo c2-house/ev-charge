@@ -1,5 +1,5 @@
-import { Post } from '@/types/supabase';
 import { Divider, Text } from '@chakra-ui/react';
+import { Post } from 'contentlayer/generated';
 import PostList from './PostList';
 
 const RelatedPosts = ({ posts }: { posts: Post[] }) => {
