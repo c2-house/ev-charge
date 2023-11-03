@@ -1,4 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -37,4 +41,8 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [remarkGfm, [remarkToc, { heading: '목차' }]],
+    rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+  },
 });
