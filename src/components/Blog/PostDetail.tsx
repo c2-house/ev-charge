@@ -1,10 +1,10 @@
-import { Box, Divider, Heading, Text } from '@chakra-ui/react';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import { Divider, Heading, Text } from '@chakra-ui/react';
 import { Post } from 'contentlayer/generated';
 
 import AdSense from '../Common/AdSense';
 import RelatedPosts from './RelatedPosts';
 import { BlogLink } from './Common';
+import Mdx from './Mdx';
 
 interface Props {
   post: Post;
@@ -12,8 +12,6 @@ interface Props {
 }
 
 const PostDetail = ({ post, relatedPosts }: Props) => {
-  const MDXContent = useMDXComponent(post.body.code);
-
   return (
     <>
       <section>
@@ -25,9 +23,7 @@ const PostDetail = ({ post, relatedPosts }: Props) => {
         </Text>
         <Divider my={6} />
         <AdSense />
-        <Box as='article' py={6}>
-          <MDXContent />
-        </Box>
+        <Mdx code={post.body.code} />
       </section>
 
       <RelatedPosts posts={relatedPosts} />
