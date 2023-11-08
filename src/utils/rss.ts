@@ -17,16 +17,14 @@ export default async function generateRssFeed() {
 
   const feed = new RSS(feedOptions);
 
-  allPosts
-    .sort((a, b) => (a.created_at > b.created_at ? 1 : -1))
-    .map((post) => {
-      feed.item({
-        title: post.title,
-        description: post.description,
-        url: `${siteURL}/blog/${post.slug}`,
-        date: new Date(post.created_at),
-      });
+  allPosts.map((post) => {
+    feed.item({
+      title: post.title,
+      description: post.description,
+      url: `${siteURL}/blog/${post.slug}`,
+      date: new Date(post.created_at),
     });
+  });
 
   fs.writeFileSync('./public/rss.xml', feed.xml({ indent: true }));
 }

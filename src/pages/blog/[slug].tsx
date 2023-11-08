@@ -12,6 +12,7 @@ const Post = ({ post, relatedPosts }: InferGetStaticPropsType<typeof getStaticPr
         description={post.description}
         keywords={post.keywords}
         url={`/blog/${post.slug}`}
+        image={`/images/blog/${post.slug}/01.jpg`}
       />
       <PostDetail post={post} relatedPosts={relatedPosts} />
     </>
