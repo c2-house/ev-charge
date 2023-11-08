@@ -1,10 +1,10 @@
-import { Divider, Heading, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import { Box, Button, Divider, Heading, Text } from '@chakra-ui/react';
 import { Post } from 'contentlayer/generated';
 
 import AdSense from '../Common/AdSense';
-import RelatedPosts from './RelatedPosts';
-import { BlogLink } from './Common';
 import Mdx from './Mdx';
+import PostList from './PostList';
 
 interface Props {
   post: Post;
@@ -25,13 +25,18 @@ const PostDetail = ({ post, relatedPosts }: Props) => {
         <AdSense />
         <Mdx code={post.body.code} />
       </section>
-
-      <RelatedPosts posts={relatedPosts} />
-      <BlogLink
-        href='/blog'
-        text='← 목록으로'
-        sx={{ display: 'flex', justifyContent: 'flex-end' }}
-      />
+      <section>
+        <Divider my={6} />
+        <Text mb={5} fontSize='xl' fontWeight='bold'>
+          관련 글 더 보기
+        </Text>
+        <PostList posts={relatedPosts} />
+        <Box py={5} display='flex' justifyContent='flex-end'>
+          <Button as={Link} href='/blog' variant='link' colorScheme='green' color='green.400'>
+            ← 목록으로
+          </Button>
+        </Box>
+      </section>
     </>
   );
 };
