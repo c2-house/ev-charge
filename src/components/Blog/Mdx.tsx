@@ -13,6 +13,7 @@ import {
   UnorderedList,
   useTheme,
 } from '@chakra-ui/react';
+import AdSense from '../Common/AdSense';
 
 const CustomLink = (props: any) => {
   if (props.href.startsWith('/')) {
@@ -116,6 +117,7 @@ const components: MDXComponents = {
   ul: UnorderedList,
   ol: OrderedList,
   li: ListItem,
+  AdSense: AdSense,
 };
 
 const Mdx = ({ code }: { code: string }) => {
