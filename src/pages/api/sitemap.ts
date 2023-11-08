@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       </url>`,
     ).join('')}
     ${allPosts
-      .sort((a, b) => (b.created_at > a.created_at ? 1 : -1))
+      .sort((a, b) => (a.created_at > b.created_at ? 1 : -1))
       .map(
         (post) =>
           `<url>

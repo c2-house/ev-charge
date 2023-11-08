@@ -1,8 +1,8 @@
 import fs from 'fs';
 import RSS from 'rss';
-import { Post } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 
-export default async function generateRssFeed(posts: Post[]) {
+export default async function generateRssFeed() {
   const siteURL =
     process.env.NODE_ENV === 'production' ? 'https://ev-charge.kr' : 'http://localhost:3000';
 
@@ -17,14 +17,16 @@ export default async function generateRssFeed(posts: Post[]) {
 
   const feed = new RSS(feedOptions);
 
-  posts.map((post) => {
-    feed.item({
-      title: post.title,
-      description: post.description,
-      url: `${siteURL}/blog/${post.slug}`,
-      date: new Date(post.created_at),
+  allPosts
+    .sort((a, b) => (a.created_at > b.created_at ? 1 : -1))
+    .map((post) => {
+      feed.item({
+        title: post.title,
+        description: post.description,
+        url: `${siteURL}/blog/${post.slug}`,
+        date: new Date(post.created_at),
+      });
     });
-  });
 
   fs.writeFileSync('./public/rss.xml', feed.xml({ indent: true }));
 }

@@ -27,7 +27,7 @@ const Blog = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
 export const getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
   const posts = allPosts.sort((a, b) => (b.created_at > a.created_at ? 1 : -1));
   const orderedPosts = [posts[posts.length - 1], ...posts.slice(0, -1)];
-  generateRssFeed(posts);
+  generateRssFeed();
 
   return {
     props: {
