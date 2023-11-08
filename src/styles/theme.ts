@@ -26,8 +26,14 @@ const styles = {
   global: {
     '.mdx-prose': {
       '#목차': {
-        mb: 1,
-        fontWeight: 'bold',
+        pt: 5,
+        '& + ul a': {
+          color: 'green.400',
+          fontWeight: 'semibold',
+          '&:hover': {
+            textDecoration: 'underline',
+          },
+        },
       },
       p: {
         my: 5,
@@ -48,7 +54,8 @@ const styles = {
           textAlign: 'center',
         },
         th: {
-          fontWeight: '700',
+          py: 2,
+          fontWeight: 'bold',
         },
       },
     },

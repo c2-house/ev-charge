@@ -42,7 +42,17 @@ export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm, [remarkToc, { heading: '목차' }]],
+    remarkPlugins: [
+      remarkGfm,
+      [
+        remarkToc,
+        {
+          heading: '목차',
+          maxDepth: 4,
+          skip: 'Intro',
+        },
+      ],
+    ],
     rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
   },
 });

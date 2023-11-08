@@ -14,7 +14,7 @@ import {
   useTheme,
 } from '@chakra-ui/react';
 
-const BlogLink = (props: any) => {
+const CustomLink = (props: any) => {
   if (props.href.startsWith('/')) {
     return (
       <Button
@@ -37,13 +37,25 @@ const BlogLink = (props: any) => {
   return <a {...props} />;
 };
 
-const BlogHeading = ({
+const CustomH3 = ({
   children,
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => {
   const theme = useTheme();
   return (
     <Heading as='h3' size='lg' pt={theme.sizes.navHeight} mb={5} {...props}>
+      {children}
+    </Heading>
+  );
+};
+
+const CustomH4 = ({
+  children,
+  ...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => {
+  const theme = useTheme();
+  return (
+    <Heading as='h4' size='md' pt={theme.sizes.navHeight} mb={5} {...props}>
       {children}
     </Heading>
   );
@@ -87,7 +99,7 @@ const BlogImage = ({
 }) => {
   return (
     <Image
-      src={src}
+      src={`/images/blog/${src}`}
       alt={alt}
       {...getImageSize(orientation)}
       {...props}
@@ -98,8 +110,9 @@ const BlogImage = ({
 
 const components: MDXComponents = {
   Image: BlogImage,
-  h3: BlogHeading,
-  a: BlogLink,
+  a: CustomLink,
+  h3: CustomH3,
+  h4: CustomH4,
   ul: UnorderedList,
   ol: OrderedList,
   li: ListItem,
