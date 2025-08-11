@@ -9,7 +9,7 @@ import { currentStationAtom } from '@/states/map';
 import { convertDistance, convertToCoord } from '@/utils/charger';
 import { MARKER_IMAGES } from '@/constants/map';
 import useMap from '@/hooks/useMap';
-import MapFixedHeightAds from '@/components/Common/AdSense/MapFixedHeightAds';
+import ResponsiveAds from '@/components/Common/AdSense/ResponsiveAds';
 
 const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
   const setCurrentStation = useSetAtom(currentStationAtom);
@@ -26,7 +26,7 @@ const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
         내 주변 충전소
       </Heading>
       <Divider />
-      <MapFixedHeightAds />
+      <ResponsiveAds height={80} />
 
       {stations.map((station, index) => {
         const { statId, statNm, distance, addr, lat, lng, markerType } = station;
@@ -63,7 +63,7 @@ const NearbyStations = ({ stations }: { stations: StationDTO[] }) => {
           </Fragment>
         );
       })}
-      <MapFixedHeightAds />
+      <ResponsiveAds height={80} />
     </Box>
   );
 };
