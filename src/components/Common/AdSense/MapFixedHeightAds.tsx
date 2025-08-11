@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const ResponsiveAds = () => {
+const MapFixedHeightAds = () => {
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') return;
     (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -9,13 +9,13 @@ const ResponsiveAds = () => {
   return (
     <ins
       className='adsbygoogle'
-      style={{ display: 'block' }}
+      style={{ display: 'block', height: '80px' }}
       data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}
-      data-ad-slot='8504827279'
+      data-ad-slot='1733072778'
       data-ad-format='auto'
       data-full-width-responsive='true'
     ></ins>
   );
 };
 
-export default ResponsiveAds;
+export default MapFixedHeightAds;

@@ -5,13 +5,13 @@ import StationHeader from './StationHeader';
 import ChargerTable from './ChargerTable';
 import StationTable from './StationTable';
 import Review from '../Review';
-import ResponsiveAds from '@/components/Common/AdSense/ResponsiveAds';
+import MapFixedHeightAds from '@/components/Common/AdSense/MapFixedHeightAds';
 
 const StationInfo = ({ station }: { station: StationDTO }) => {
   return (
     <Box pb={2}>
       <StationHeader station={station} />
-      <ResponsiveAds height={80} />
+      <MapFixedHeightAds />
       <Divider h={2} mt={2} mb={1} bg='gray.200' />
       <ChargerTable chargers={station.chargers} availableCount={station.availableCount} />
       <Divider h={2} my={1} bg='gray.200' />
