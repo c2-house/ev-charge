@@ -12,8 +12,6 @@ const MapFixedHeightAds = () => {
       style={{ display: 'block', height: '80px' }}
       data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}
       data-ad-slot='1733072778'
-      data-ad-format='auto'
-      data-full-width-responsive='true'
     ></ins>
   );
 };
