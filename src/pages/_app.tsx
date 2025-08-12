@@ -27,13 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta name='theme-color' content='#ffffff' />
           <meta
             name='google-site-verification'
-            content='kCxJGsTC0g9IhzyOexCiJ0lbrB0hvAmHDz4kfv2sunY'
-          />
-          {/* <meta
-            name='google-site-verification'
             content='yAPCOjrjXkneaFLU21zJVUZT_mDKpTL3BM8QPsHgvN0'
-          /> */}
-          <meta name='naver-site-verification' content='b3044df87ae5838592940b7d467f77932ccd4063' />
+          />
+          <meta name='naver-site-verification' content='d72089b0ff71232d56d18948e035b0d7de37939a' />
         </Head>
         <div className={pretendard.className}>
           <Component {...pageProps} />
